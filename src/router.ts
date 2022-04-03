@@ -3,8 +3,6 @@ import { initInstructions } from "./pages/instructions";
 import { initGame } from "./pages/game";
 import { initResult } from "./pages/results";
 
-const BASE_PATH = "/desafiom5";
-
 const routes = [
 	{
 		path: /\/home/,
@@ -23,6 +21,8 @@ const routes = [
 		component: initResult,
 	},
 ];
+
+const BASE_PATH = "/desafiom5";
 
 function isGitHubPages() {
 	return location.host.includes("gitgub.io");
