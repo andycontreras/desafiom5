@@ -5,19 +5,19 @@ import { initResult } from "./pages/results";
 
 const routes = [
 	{
-		path: /\/home/,
+		path: /\/desafiom5\/home/,
 		component: initHome,
 	},
 	{
-		path: /\/instructions/,
+		path: /\/desafiom5\/instructions/,
 		component: initInstructions,
 	},
 	{
-		path: /\/game/,
+		path: /\/desafiom5\/game/,
 		component: initGame,
 	},
 	{
-		path: /\/result/,
+		path: /\/desafiom5\/result/,
 		component: initResult,
 	},
 ];
@@ -58,4 +58,10 @@ export function initRouter(container: Element) {
 	window.onpopstate = function () {
 		handleRoute(location.pathname);
 	};
+
+	if (location.host.includes("andycontreras.github.io")) {
+		goTo("/desafiom5/home");
+	} else {
+		handleRoute(location.pathname);
+	}
 }
