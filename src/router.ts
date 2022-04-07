@@ -50,7 +50,7 @@ export function initRouter(container: Element) {
 	}
 
 	if (location.pathname == "/") {
-		goTo("/home");
+		goTo("/desafiom5/home");
 	} else {
 		handleRoute(location.pathname);
 	}
