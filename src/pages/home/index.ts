@@ -44,7 +44,7 @@ export function initHome(params) {
   </div>`;
 	const startButtonEl = div.querySelector(".start-button");
 	startButtonEl.addEventListener("click", () => {
-		params.goTo("/instructions");
+		params.goTo("/desafiom5/instructions/");
 	});
 	div.appendChild(style);
 	return div;

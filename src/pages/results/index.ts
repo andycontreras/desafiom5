@@ -116,10 +116,10 @@ export function initResult(params) {
 	const back = div.querySelector(".back");
 	const inicio = div.querySelector(".inicio");
 	back.addEventListener("click", () => {
-		params.goTo("/game");
+		params.goTo("/desafiom5/game/");
 	});
 	inicio.addEventListener("click", () => {
-		params.goTo("/home");
+		params.goTo("/desafiom5/home/");
 	});
 	div.appendChild(style);
 	return div;

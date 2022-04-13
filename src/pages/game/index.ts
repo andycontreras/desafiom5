@@ -187,7 +187,7 @@ export function initGame(params) {
 	const botCurrentGame = (currentState.botPlay = botChoice);
 
 	setTimeout(() => {
-		params.goTo("/result");
+		params.goTo("/desafiom5/result/");
 	}, 5000);
 	div.appendChild(style);
 	return div;

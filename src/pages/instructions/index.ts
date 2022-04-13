@@ -51,7 +51,7 @@ export function initInstructions(params) {
   </div>`;
 	const startButtonEl = div.querySelector(".start-button");
 	startButtonEl.addEventListener("click", () => {
-		params.goTo("/game");
+		params.goTo("/desafiom5/game/");
 	});
 	div.appendChild(style);
 	return div;
