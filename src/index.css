@@ -9,5 +9,6 @@
 
 .root {
 	background-color: #f1aa3898;
-	height: max-content;
+	height: fit-content;
+	width: fit-content;
 }
