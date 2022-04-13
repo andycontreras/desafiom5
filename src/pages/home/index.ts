@@ -4,6 +4,7 @@ export function initHome(params) {
 
 	style.innerHTML = `
   .home-container{
+    height: 100vh;
     display:flex;
     flex-direction: column;
     padding: 25px 15px 0;
