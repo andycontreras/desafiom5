@@ -5,6 +5,7 @@ export function initHome(params) {
 	style.innerHTML = `
   .home-container{
     display:flex;
+    justify-content: space-between;
     flex-direction: column;
     padding: 25px 15px 0;
     overflow-y: hidden;
