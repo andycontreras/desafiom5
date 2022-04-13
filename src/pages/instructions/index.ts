@@ -5,7 +5,7 @@ export function initInstructions(params) {
 	style.innerHTML = `
   .instructions-container{
     display:flex;
-    justify-content: space-between;
+    justify-items: space-between;
     flex-direction: column;
     padding: 25px 15px 0;
     overflow-y: hidden;
