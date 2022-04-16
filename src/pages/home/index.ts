@@ -5,9 +5,8 @@ export function initHome(params) {
 	style.innerHTML = `
   .home-container{
     display:flex;
-    justify-items: space-between;
+    justify-content: space-between;
     flex-direction: column;
-    padding: 25px 15px 0;
     overflow-y: hidden;
   }
   @media(min-width: 679px){
