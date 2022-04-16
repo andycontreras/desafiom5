@@ -9,8 +9,8 @@ export function initResult(params) {
 	const div = document.createElement("div");
 	const style = document.createElement("style");
 
-	var myScore = state.getState().history.myScore;
-	var botScore = state.getState().history.botScore;
+	var myScore = state.data.history.myScore;
+	var botScore = state.data.history.botScore;
 
 	style.innerHTML = `
   .result-container{
@@ -23,18 +23,6 @@ export function initResult(params) {
     width: 250px;
     height: 250px;
   }
-  // .lose-b{
-  //   display: none;
-  //   background-color: #7e0b0b75;
-  // }
-  // .win-b{
-  //   display: none;
-  //   background-color: #4b9d0d75;
-  // }
-  // .tie-b{
-  //   display: none;
-  //   background-color: #3d569662;
-  // }
 
   .win{
     display: none;
@@ -100,7 +88,7 @@ export function initResult(params) {
 	const currentGame = state.getState().currentGame;
 	const myPlay = currentGame.myPlay;
 	const botPlay = currentGame.botPlay;
-	const whoWins = state.whoWhins(myPlay, botPlay);
+	const whoWins = state.whoWins(myPlay, botPlay);
 	const win: any = div.querySelector(".win");
 	const lose: any = div.querySelector(".lose");
 	const tie: any = div.querySelector(".tie");

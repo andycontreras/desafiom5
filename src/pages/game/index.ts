@@ -5,6 +5,7 @@ function botRandom(botOptions) {
 }
 var choices = ["piedra", "papel", "tijera"];
 const botChoice = botRandom(choices);
+
 export function initGame(params) {
 	const div = document.createElement("div");
 	const style = document.createElement("style");
@@ -17,7 +18,6 @@ export function initGame(params) {
 			clearInterval(countdown);
 		}
 	}, 1000);
-
 	style.innerHTML = `
   .countdown{
     font-size: 170px;
@@ -30,7 +30,7 @@ export function initGame(params) {
       font-size: 200px;
       margin-top: 0;
 
-    } 
+    }
   }
   .game-container{
     height: 100vh;
@@ -54,8 +54,8 @@ export function initGame(params) {
       position: relative;
       top: 40px;
       opacity: 0.5;
-      
-    } 
+
+    }
   }
   .hand-view:hover{
     top: 0px;
@@ -89,7 +89,7 @@ export function initGame(params) {
   .selected {
     position: absolut;
     opacity: 1;
-    
+
   }
   `;
 	div.innerHTML = `
@@ -166,28 +166,36 @@ export function initGame(params) {
 			clearInterval(countdown);
 			if (select == "piedra") {
 				state.setMove("piedra");
+				playGame("piedra");
 				setTimeout(() => {
-					playGame("piedra");
-				}, 1000);
+					// params.goTo("/desafiom5/results/");
+				}, 3000);
 			} else if (select == "papel") {
 				state.setMove("papel");
+				playGame("papel");
 				setTimeout(() => {
-					playGame("papel");
+					// params.goTo("/desafiom5/results/");
 				}, 1000);
 			} else if (select == "tijera") {
 				state.setMove("tijera");
+				playGame("tijera");
 				setTimeout(() => {
-					playGame("tijera");
+					// params.goTo("/desafiom5/results/");
 				}, 1000);
 			}
 		});
 	}
-
 	const currentState = state.getState().currentGame;
 	const botCurrentGame = (currentState.botPlay = botChoice);
+	const myPlay = currentState.myPlay;
+	const whoWins = state.data.currentGame.myPlay;
 
 	setTimeout(() => {
-		params.goTo("/desafiom5/result/");
+		if (currentState.myPlay == "") {
+			params.goTo("/desafiom5/instructions/");
+		} else {
+			params.goTo("/desafiom5/result/");
+		}
 	}, 5000);
 	div.appendChild(style);
 	return div;

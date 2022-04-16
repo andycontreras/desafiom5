@@ -51,7 +51,7 @@ const state = {
 		//Datos de jugadas
 		const myPlay = currentState.currentGame.myPlay;
 		const botPlay = currentState.currentGame.botPlay;
-		const currentWhoWins = this.whoWhins(myPlay, botPlay);
+		const currentWhoWins = this.whoWins(myPlay, botPlay);
 		//Datos de puntajes
 		const myScore = currentState.history.myScore;
 		const botScore = currentState.history.botScore;
@@ -74,7 +74,7 @@ const state = {
 			});
 		}
 	},
-	whoWhins(myPlay: Played, botPlay: Played) {
+	whoWins(myPlay: Played, botPlay: Played) {
 		//Datos de ganadas
 		const winPiedra: boolean = myPlay == "piedra" && botPlay == "tijera";
 		const winPapel: boolean = myPlay == "papel" && botPlay == "piedra";
