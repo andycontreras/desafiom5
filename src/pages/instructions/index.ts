@@ -4,7 +4,7 @@ export function initInstructions(params) {
 
 	style.innerHTML = `
   .instructions-container{
-    height: 100vh
+    height: 100vh;
     display:flex;
     justify-content: space-between;
     flex-direction: column;
