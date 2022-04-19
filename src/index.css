@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,300&display=swap");
 
-body {
+/* body {
 	height: fit-content;
-}
+} */
 * {
 	margin: 0;
 	padding: 0;
@@ -11,5 +11,4 @@ body {
 
 .root {
 	background-color: #f1aa3898;
-	height: 100%;
 }
