@@ -1,10 +1,10 @@
 import { state } from "../../state";
+//PRUEBA DE OTRO RANDOM CHOICE
 
-function botRandom(botOptions) {
-	return botOptions[Math.floor(Math.random() * 3)];
-}
-var choices = ["piedra", "papel", "tijera"];
-const botChoice = botRandom(choices);
+const options = ["piedra", "papel", "tijera"];
+const randomSelect = Math.floor(Math.random() * options.length);
+console.log("La seleccion", options[randomSelect]);
+var botRandomPlay = options[randomSelect];
 
 export function initGame(params) {
 	const div = document.createElement("div");
@@ -130,11 +130,12 @@ export function initGame(params) {
 			botHandsCont.style.display = "inherit";
 			countdownComp.style.display = "none";
 		} else if (params == "tijera") {
-			tijeraBot.style.display = "inherit";
+			tijeraBot.style.display = " inherit";
 			botHandsCont.style.display = "inherit";
 			countdownComp.style.display = "none";
 		}
 	}
+
 	function playGame(hand) {
 		if (hand == "piedra") {
 			myPapel.style.display = "none";
@@ -142,21 +143,21 @@ export function initGame(params) {
 			handsCont.style.justifyContent = "center";
 			myPiedra.classList.remove(".hand-view");
 			myPiedra.classList.add("selected");
-			botGame(botChoice);
+			botGame(botRandomPlay);
 		} else if (hand == "papel") {
 			myPiedra.style.display = "none";
 			myTijera.style.display = "none";
 			handsCont.style.justifyContent = "center";
 			myPapel.classList.remove(".hand-view");
 			myPapel.classList.add("selected");
-			botGame(botChoice);
+			botGame(botRandomPlay);
 		} else if (hand == "tijera") {
 			myPapel.style.display = "none";
 			myPiedra.style.display = "none";
 			handsCont.style.justifyContent = "center";
 			myTijera.classList.remove(".hand-view");
 			myTijera.classList.add("selected");
-			botGame(botChoice);
+			botGame(botRandomPlay);
 		}
 	}
 
@@ -166,29 +167,24 @@ export function initGame(params) {
 			clearInterval(countdown);
 			if (select == "piedra") {
 				state.setMove("piedra");
-				playGame("piedra");
 				setTimeout(() => {
-					// params.goTo("/desafiom5/results/");
+					playGame("piedra");
 				}, 3000);
 			} else if (select == "papel") {
 				state.setMove("papel");
-				playGame("papel");
 				setTimeout(() => {
-					// params.goTo("/desafiom5/results/");
+					playGame("papel");
 				}, 1000);
 			} else if (select == "tijera") {
 				state.setMove("tijera");
-				playGame("tijera");
 				setTimeout(() => {
-					// params.goTo("/desafiom5/results/");
+					playGame("tijera");
 				}, 1000);
 			}
 		});
 	}
 	const currentState = state.getState().currentGame;
-	const botCurrentGame = (currentState.botPlay = botChoice);
-	const myPlay = currentState.myPlay;
-	const whoWins = state.data.currentGame.myPlay;
+	const pushBotCurrentGame = (currentState.botPlay = botRandomPlay);
 
 	setTimeout(() => {
 		if (currentState.myPlay == "") {

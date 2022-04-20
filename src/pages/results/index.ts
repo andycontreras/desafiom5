@@ -93,6 +93,11 @@ export function initResult(params) {
 	const lose: any = div.querySelector(".lose");
 	const tie: any = div.querySelector(".tie");
 
+	// console.log("El currentGame", currentGame);
+	// console.log("myPlay:", myPlay);
+	// console.log("botplay:", botPlay);
+	// console.log("whoWins:", whoWins);
+
 	if (whoWins == "win") {
 		win.style.display = "inherit";
 	} else if (whoWins == "lose") {
