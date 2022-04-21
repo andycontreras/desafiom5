@@ -135,7 +135,12 @@ export function initGame(params) {
 			countdownComp.style.display = "none";
 		}
 	}
+	const botMove = () => {
+		new botGame(botRandomPlay);
+		return botMove;
+	};
 
+	console.log(botMove);
 	function playGame(hand) {
 		if (hand == "piedra") {
 			myPapel.style.display = "none";

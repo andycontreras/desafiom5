@@ -110,6 +110,7 @@ export function initResult(params) {
 	const inicio = div.querySelector(".inicio");
 	back.addEventListener("click", () => {
 		params.goTo("/desafiom5/game/");
+		location.reload();
 	});
 	inicio.addEventListener("click", () => {
 		params.goTo("/desafiom5/home/");
