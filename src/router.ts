@@ -22,7 +22,7 @@ const routes = [
 	},
 ];
 
-const BASE_PATH = "/desafiom5";
+const BASE_PATH = "/desafiom5/";
 
 function isGitHubPages() {
 	return location.host.includes("gitgub.io");
